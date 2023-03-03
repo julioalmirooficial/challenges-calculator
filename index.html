@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .attribution { font-size: 11px; text-align: center;  margin-top: 1rem;}
+        .attribution a { color: hsl(228, 45%, 44%);}
+    </style>
+</head>
+<body class="theme-1">
+    <div class="main">
+        <div class="header">
+            <h1 class="title">calc</h1>
+            <div class="cross-center">
+                <span class="subtitle">THEME</span>
+                <div class="content-change-theme cross-center">
+                    <div class="title-checked-conten cross-center">
+                        <label for="theme1">1</label>
+                        <label for="theme2">2</label>
+                        <label for="theme3">3</label>
+                    </div>
+                    <input type="radio" id="theme1" name="checked" class="checked1">
+                    <input type="radio" id="theme2" name="checked" class="checked2">
+                    <input type="radio" id="theme3" name="checked" class="checked3">                    
+                    <span class="active"></span>
+                </div>
+            </div>
+        </div>
+        <div class="result cross-center" contenteditable="true">
+            
+        </div>
+        <div class="grid">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button remove">DEL</button>
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">+</button>
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">-</button>
+            <button class="button">.</button>
+            <button class="button">0</button>
+            <button class="button">/</button>
+            <button class="button">x</button>
+            <button class="button remove span">RESET</button>
+            <button class="button calc span">=</button>
+        </div>
+    </div>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://julioalmiro.com">Julio almiro</a>.
+      </div>
+    <script src="./app.js"></script>
+</body>
+</html>
