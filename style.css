@@ -1,3 +1,20 @@
+body.theme-1 {
+    --primary: hsl(222, 26%, 31%);
+    --secondary: hsl(223, 31%, 20%);
+    --terciario:hsl(224, 36%, 15%);
+
+    --desaturated:hsl(225, 21%, 49%);
+    --desaturated-shadow:hsl(224, 28%, 35%);
+
+    --key-bg:hsl(6, 63%, 50%);
+    --key-shadow:hsl(6, 70%, 34%);
+
+    --grayish-bg:hsl(30, 25%, 89%);
+    --grayish-shadow:hsl(28, 16%, 65%);
+    
+    --text-very:hsl(221, 14%, 31%);
+    --text-white:hsl(0, 0%, 100%);
+}
 @media (prefers-color-scheme: dark) {
     body.theme-1 {
         --primary: hsl(222, 26%, 31%);
@@ -105,21 +122,12 @@ body{
 }
 .title-checked-conten{
     position: absolute;
-    top: -140%;
+    top: -100%;
     left: 0;
     font-size: 12px;
     width: 100%;
     justify-content: space-between;
     color: var(--text-white);
-}
-.title-checked-conten label {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 20px;
-    cursor: pointer;
-    background-color: rgba(0,0,0,.01);
 }
 .active{
     width: 15px;
@@ -191,35 +199,57 @@ body{
 .button:active{
     transform: scale(.85);
 }
-.theme-2 .main .grid .button {
-    color: var(--text-white);
-}
 .button:hover {
     background-color: var(--text-white);
 }
+
+
+.theme-2 .main .grid .button {
+    color: var(--text-white);
+}
+
 .theme-2 .button:hover {
     background-color: var(--text-very);
 }
 .theme-3 .button:hover {
     background-color: var(--desaturated-shadow);
 }
+
+
+.button.remove {
+    color: var(--text-white);
+    background-color: var(--desaturated);
+    box-shadow: 0 4px 0 var(--desaturated-shadow);
+}
 .button.remove:hover {
     color: var(--text-white);
     background-color: var(--desaturated);
     box-shadow: 0 4px 0 var(--desaturated-shadow);
+}
+
+
+.button.calc {
+    color: var(--text-white);
+    background-color: var(--key-bg);
+    box-shadow: 0 3px 0 var(--key-shadow);
 }
 .button.calc:hover {
     color: var(--text-white);
     background-color: var(--key-bg);
     box-shadow: 0 3px 0 var(--key-shadow);
 }
-.theme-3 .button.remove:hover {
+
+
+.theme-2 .main .button.calc,
+.theme-2 .main .button.remove {
+    color: var(--text-very) ;
+}
+
+
+
+.theme-3 .button.remove {
     color: var(--text-very);
 }
-.theme-3 .button.calc:hover {
+.theme-3 .button.calc {
     color: var(--text-very-dark);
-}
-.theme-2 .button.calc:hover,
-.theme-2 .button.remove:hover {
-    color: var(--text-very);
 }

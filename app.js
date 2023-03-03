@@ -1,8 +1,7 @@
-const checked = document.querySelector('.title-checked-conten')
 const inputChecked = document.querySelectorAll('input[name="checked"]');
-const checked1 = document.querySelector('input[id="theme1"]')
-const checked2 = document.querySelector('input[id="theme2"]')
-const checked3 = document.querySelector('input[id="theme3"]')
+const checked1 = document.getElementById('theme1')
+const checked2 = document.getElementById('theme2')
+const checked3 = document.getElementById('theme3')
 
 const storage = localStorage
 
@@ -22,21 +21,6 @@ const theme3 = () => {
     inputChecked[2].checked = true
 }
 
-
-const activeTheme = e => {
-    if(e.target.getAttribute('for') === 'theme1'){
-        theme1()
-        storage.setItem('theme','theme-1')
-    }
-    if(e.target.getAttribute('for') === 'theme2'){
-        theme2()
-        storage.setItem('theme','theme-2')
-    }
-    if(e.target.getAttribute('for') === 'theme3'){
-        theme3()
-        storage.setItem('theme','theme-3')
-    }
-}
 const activeThemeChecked = () => {
     if(checked1.checked){
         theme1()
@@ -51,10 +35,6 @@ const activeThemeChecked = () => {
         storage.setItem('theme','theme-3')
     }
 }
-
-checked.addEventListener('click', e => {
-    activeTheme(e)
-})
 
 checked1.addEventListener('change', e => {
     activeThemeChecked(e)
@@ -108,6 +88,10 @@ buttons.addEventListener('click', e => {
         if(e.target.innerText === "=") {
             if(result.innerText ==="") {
                 result.innerText = "0"
+                return
+            }
+            if(isNaN(compareOperations)) {
+                return
             }
             result.innerText = calculate(result.innerText)
         }
@@ -135,35 +119,35 @@ const calculate = (listOperations) => {
         }
         if (arrOfOperations[i] === "*" || arrOfOperations[i] === "/") {
         let operacion = arrOfOperations[i];
-        let izquierda = parseFloat(arrOfOperations[i - 1]);
-        let derecha = parseFloat(arrOfOperations[i + 1]);
-        let resultado;
+        let left = parseFloat(arrOfOperations[i - 1]);
+        let right = parseFloat(arrOfOperations[i + 1]);
+        let result;
     
         if (operacion === "*") {
-            resultado = izquierda * derecha;
+            result = left * right;
         } else {
-            resultado = izquierda / derecha;
+            result = left / right;
         }
     
-        arrOfOperations.splice(i - 1, 3, resultado.toString());
+        arrOfOperations.splice(i - 1, 3, result.toString());
         i -= 2;
         }
     }
     
     // Luego realizamos la suma y la resta
-    let resultado = parseFloat(arrOfOperations[0]);    
+    let result = parseFloat(arrOfOperations[0]);    
     for (let i = 1; i < arrOfOperations.length; i += 2) {
-        let operacion = arrOfOperations[i];
-        let numero = parseFloat(arrOfOperations[i + 1]);
+        let operation = arrOfOperations[i];
+        let number = parseFloat(arrOfOperations[i + 1]);
     
-        switch (operacion) {
+        switch (operation) {
         case "+":
-            resultado += numero;
+            result += number;
             break;
         case "-":
-            resultado -= numero;
+            result -= number;
             break;
         }
     }
-    return resultado
+    return result
 }
