@@ -80,8 +80,12 @@ buttons.addEventListener('click', e => {
                 } else {
                     result.innerText += e.target.innerText                 
                 }  
-            } else {                
-                result.innerText += e.target.innerText                  
+            } else {                 
+                if(isNaN(compareOperations) && compareOperations === val){
+                    result.innerText = result.innerText.slice(0, result.innerText.length - 1) + e.target.innerText    
+                } else {                    
+                result.innerText += e.target.innerText  
+                }      
             }
         }
         // si el target tiene el valoro igual generamos el valor de las operaciones
